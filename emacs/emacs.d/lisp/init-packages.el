@@ -51,7 +51,6 @@ There are two things you can do about this warning:
         ein
         websocket
         request
-        auto-complete
         smartrep
 	) "Default packages")
 
