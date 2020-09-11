@@ -26,7 +26,9 @@
 ;; 开启全局 Company 补全, uninstalled Company
 (global-company-mode 1)
 ;; 关闭自动备份
-(setq make-bakeup-files nil)
+;; (setq make-bakeup-files nil)
+;; all backups goto ~/.backups instead in the current directory
+(setq backup-directory-alist (quote (("." . "~/.backups"))))
 ;; 关闭自动保存
 (setq auto-save-default nil)
 ;; 使用下面的配置文件将删除功能配置成与其他图形界面的编辑器相同
