@@ -10,13 +10,8 @@ which is unsafe because it allows man-in-the-middle attacks.
 There are two things you can do about this warning:
 1. Install an Emacs version that does support SSL and be safe.
 2. Remove this warning from your init file so you won't see it again."))
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")) t)
-  ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
-  ;; and `package-pinned-packages`. Most users will not need or want to do this.
-  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")) t)
-  (add-to-list 'package-archives (cons "gnu elpa" (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")) t)
-  (add-to-list 'package-archives (cons "Org" (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/org/")) t)
-  (add-to-list 'package-archives (cons "Marmalade" (concat proto "://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")) t)
+  (setq package-archives '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+                           ("melpa" . "https://elpa.emacs-china.org/melpa/")))
   )
 (package-initialize)
 ;; M-x package-refresh-contents or M-x package-list-packages to ensure that Emacs has fetched the MELPA package list
