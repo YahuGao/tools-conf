@@ -1,0 +1,41 @@
+[general]
+accounts = Windriver
+pythonfile = ~/.offlineimap.py
+maxsyncaccounts = 2
+
+[Account Windriver]
+localrepository = LocalWind
+remoterepository = RemoteWind
+autorefresh = 5
+quick = 10
+postsynchook = mu index --maildir ~/Maildir
+
+[Repository LocalWind]
+type = Maildir
+localfolders = ~/Maildir/Wind
+nametrans = lambda foldername: foldername.decode('imap4-utf-7').encode('utf-8')
+
+[Repository RemoteWind]
+maxconnections = 2
+type = IMAP
+auth = on
+ssl = yes
+sslcacertfile=/etc/ssl/certs/ca-certificates.crt
+remotehost = outlook.office365.com
+remoteuser = yahu.gao@windriver.com
+remotepass = River123$
+remoteport = 993
+nametrans = lambda folder: folder.decode('imap4-utf-7').encode('utf-8')
+#folderfilter = lambda folder: folder in ['Inbox', 'lkml', 'inbox', axxia_snr']
+keepalive = 60
+holdconnectionopen = yes
+
+
+## Try one of the following for Ubuntu or Arch:
+# sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# sslcacertfile = OS-DEFAULT
+
+# These are effectively the same as the above
+[Account Exchange]
+[Repository LocalExchange]
+[Repository RemoteExchange]
