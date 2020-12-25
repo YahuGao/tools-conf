@@ -47,6 +47,7 @@ There are two things you can do about this warning:
         websocket
         request
         smartrep
+	xcscope
 	) "Default packages")
 
 (setq package-selected-packages my/packages)

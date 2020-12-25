@@ -8,4 +8,6 @@
 ;; >>> configuration of TEX >>>
 (require 'config-tex)
 ;; <<< configuration of TEX <<<
+(require 'config-kernel)
+(require 'xcscope)
 (provide 'config-packages)
