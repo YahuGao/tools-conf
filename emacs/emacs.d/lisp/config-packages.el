@@ -1,3 +1,4 @@
+(require 'config-mu4e)
 (require 'company)
 (require 'config-theme)
 (require 'config-markdown)
